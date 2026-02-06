@@ -370,9 +370,9 @@ International Organization.
 
 ## 17. Supporting Materials
 
-White paper (Markdown)
+White paper (Markdown): <https://github.com/senzee1984/CFP/blob/main/BHUS26/No%20more%20Trampolines%3A%20True%20In-Place%20Byte%20Insertion%20in%20x64%20PE%20Binaries%20via%20Segmented%20Absorption.md>
 
-Python script
+Python scripts: <https://github.com/senzee1984/white-paper/blob/main/BinaryScalpal.py>, <https://github.com/senzee1984/white-paper/blob/main/messagebox_shellcode.py>
 
 
 ## 18. Hands-On Education
