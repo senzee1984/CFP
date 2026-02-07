@@ -468,7 +468,8 @@ In short, while “non‑obfuscated, non‑packed, MSVC‑compiled x64 PE” may
 # The Core Trick: Segmented Absorption Algorithm
 
 ## The naive approach: Whole-shift and its reference nightmare
-In the previous sections, we used a game server function—one that assigns unique GUIDs to players—to introduce in-place insertion. The code snippet shown was deliberately limited; within that excerpt, only one instruction required adjustment: a RIP-relative addressing operand. But beyond what was shown, far more instructions would need fixing. We discussed 4 scenarios for control-flow instructions, 6 scenarios for RIP-relative addressing, and the necessary adjustments for hardcoded addresses in the relocation table.
+In the previous sections, we used the `WinMain` function of Procmon64.exe to introduce in-place insertion. The code snippet shown was deliberately limited; within that excerpt, several instructions required adjustment, but beyond what was shown, far more would need fixing throughout the .text section. We discussed 4 scenarios for control-flow instructions, 6 scenarios for RIP-relative addressing, and the necessary adjustments for relocation-backed absolute addresses.
+
 Yet all of this assumes the simplest form of in-place insertion: shift all subsequent instructions forward, relying on sufficient free bytes at the end of the .text section to avoid breaking section boundaries. This naive model introduces two notable problems:
 
 Reference volume becomes a nightmare. Depending on binary size, complexity, and insertion address, the number of affected references can explode. Even though we don't fix them manually—the algorithm handles that—a larger reference count means higher probability of missed edge cases or reference types we haven't anticipated. And in-place insertion demands 100% accuracy. Not 98%, not 99%. A single missed reference means a crash or corrupted execution.
