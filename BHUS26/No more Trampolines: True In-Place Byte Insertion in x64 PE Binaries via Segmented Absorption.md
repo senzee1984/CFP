@@ -772,7 +772,7 @@ Returning to Process Monitor: examining the RUNTIME_FUNCTION entry at offset `0x
 <img width="997" height="632" alt="image" src="https://github.com/user-attachments/assets/6e3865c7-7384-440d-baad-e99d738f1b07" />
 
 
-If such a handler falls within the affected range and isn’t updated, the program may appear to run normally—until an exception is thrown. Only then does the OS consult the stale RVA and jump into corrupted code. It becomes a delayed‑trigger failure rather than an immediate crash, and far more trickier  to diagnose.
+If such a handler falls within the affected range and isn’t updated, the program may appear to run normally—until an exception is thrown. Only then does the OS consult the stale RVA and jump into corrupted code. It becomes a delayed‑trigger failure rather than an immediate crash, and far trickier to diagnose.
 
 The reference types in this subsection are not algorithmically complex—once you know they exist, handling them is straightforward. The real danger is ignorance: these structures rarely appear in tutorials or typical reverse engineering workflows. Their existence only becomes apparent when a patched binary crashes under specific conditions. We document them here as a checklist for implementers.
 
