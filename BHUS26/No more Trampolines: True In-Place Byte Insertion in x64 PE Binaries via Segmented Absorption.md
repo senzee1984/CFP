@@ -1503,7 +1503,7 @@ This is not a theoretical exercise. It is a deployable technique validated again
 
 The core contributions are:
 - Segmented Absorption Algorithm — Distributes displacement across internal padding regions, containing the blast radius and reducing the number of references that require adjustment. It transforms a global rewriting problem into a localized and tractable one.
-- DISP32_TEXT_PTR Reference Type — A previously undocumented class of .text-pointing displacement operands that hide in plain sight and silently corrupt execution when overlooked.
+- DISP32_TEXT_PTR Reference Type — A rarely documented class of .text-pointing displacement operands that hide in plain sight and silently corrupt execution when overlooked.
 - Hybrid Disassembly Strategy — Neither pure linear nor pure recursive scanning is sufficient. Combining both captures reference patterns that either approach alone would miss.
 
 These are not implementation details—they are the conceptual tools that make true in-place insertion possible. The tool is an artifact; the insight is the contribution.
