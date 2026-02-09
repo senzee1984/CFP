@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""
-Debug version - 使用你原来calc shellcode的PEB遍历方式
-"""
+
 
 import ctypes
 import sys
@@ -14,9 +12,7 @@ except ImportError:
 
 
 def generate_shellcode_asm():
-    """
-    使用原版calc.exe shellcode中验证过的PEB遍历方式
-    """
+
     
     CODE = (
         # ============================================
@@ -164,11 +160,6 @@ def generate_shellcode_asm():
         "   popfq;"
         "   jmp shellcode_end;"
         
-        # ============================================
-        # parse_module (原版calc shellcode的方式)
-        # Input: R9 = module base, R8D = hash
-        # Output: RAX = function address
-        # ============================================
         "parse_module:"
         "   mov ecx, dword ptr [r9 + 0x3c];"
         "   xor r15, r15;"
