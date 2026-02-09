@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 """
-PE Byte Inserter v2 - A tool for inserting bytes into PE executables
-
 Methods:
 1. New section method - Create a new section and redirect execution via JMP
 2. Code cave method - Find existing code caves and use them (uses LARGEST cave)
@@ -4709,4 +4707,5 @@ Examples:
 
 
 if __name__ == "__main__":
+
     sys.exit(main())
